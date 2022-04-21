@@ -10,7 +10,7 @@ def news_by_url(url):
 
 
 def get_sources():
-    sources = open("news_sources", "r")
+    sources = open("data/news_sources", "r")
     return sources.read().split("\n")
 
 

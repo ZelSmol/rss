@@ -6,7 +6,7 @@
             <div class="mb-1 text-muted">{pub_date}</div>
             <p class="mb-auto">{description}</p>
             <p class="mb-auto">{author}</p>
-            <a href="{guid}" class="btn btn-primary" style="width: 25%;">Continue reading</a>
+            <a href="{guid}" target="_blank" onclick="update_user_profile('{category}', '{guid}')" class="btn btn-primary" id="guid-link" style="width: 25%;">Continue reading</a>
         </div>
         <div class="col-auto d-none d-lg-block ">
             <img src={img_link} width=151px height=151px class="rounded-circle mt-5">

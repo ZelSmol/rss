@@ -1,16 +1,22 @@
 import eel
 
-from rss_parser import get_feed
+from user_profile import get_user_data
+import heapq
 
 
 def show_news(news):
-    news_widget = open("news_widget", "r").read()
-    news_colors = {"sport": "warning", "world": "info", "business": "danger",
-                   "health": "success", "entertainment": "secondary", "sci_tech": "primary"}
-    result = []
+    q = []
+    data = get_user_data()
     for item in news:
-        result.append(news_widget.format(color=news_colors[item["category"]], description=item["description"],
-                                         title=item["title"], pub_date=item["pub_date"], guid=item["guid"],
-                                         author=item["author"], img_link=item["img_link"], category=item["category"], ))
+        try:
+            source = data["sources"][item.guid]
+        except:
+            source = 0
+        heapq.heappush(q, (data["categories"][item.category], source, item))
+    result = []
+
+    while q:
+        next_item = heapq.heappop(q)
+        result.append(next_item[2].get_html())
 
     return "".join(result)

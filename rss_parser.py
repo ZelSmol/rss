@@ -1,6 +1,8 @@
 import requests
 from requests_html import HTMLSession
 from news_classificator import predict_category
+from NewsClass import News
+from datetime import datetime
 
 
 def get_source(url: str):
@@ -19,9 +21,7 @@ def get_source(url: str):
 
 def get_feed(urls: list) -> list:
     """
-    Возвращает список словарей вида: {'title': заголовок  новости, 'pubDate': дата публикации, 'guid': ссылка на
-    новость, 'description': описание,  'category': 'категория новости','author': автор ,'img_link': ссылка на
-    изображение}
+    Возвращает список объектов класса News
     """
     data = []
     for url in urls:
@@ -34,7 +34,6 @@ def get_feed(urls: list) -> list:
 
                 title = item.find('title', first=True).text
                 pub_date = item.find('pubDate', first=True).text
-                pub_date = " ".join(pub_date.split()[:4])
                 guid = item.find('guid', first=True).text
                 description = item.find('description', first=True).text
                 author = "Unknown"
@@ -55,8 +54,9 @@ def get_feed(urls: list) -> list:
                     img_link = str(img_link).split()[2][5:-1]
 
                 category = predict_category(title)
-                row = {'title': title, 'pub_date': pub_date, 'guid': guid,
-                       'description': description, 'category': category, 'author': author, 'img_link': img_link}
-                data.append(row)
+
+                data.append(News(title, description, pub_date, guid,
+                                 category, author, img_link,
+                                 datetime.strptime(pub_date, "%a, %d %b %Y %H:%M:%S %z").timestamp()))
 
     return data

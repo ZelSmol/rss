@@ -1,0 +1,15 @@
+<div class="px-5">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+            <span class="badge rounded-pill bg-{color}" style="width: 25%;">{category}</span>
+            <h3 class="mb-0">{title}</h3>
+            <div class="mb-1 text-muted">{pub_date}</div>
+            <p class="mb-auto">{description}</p>
+            <p class="mb-auto">{author}</p>
+            <a href="{guid}" class="btn btn-primary" style="width: 25%;">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block ">
+            <img src={img_link} width=151px height=151px class="rounded-circle mt-5">
+        </div>
+    </div>
+</div>

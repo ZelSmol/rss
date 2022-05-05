@@ -2,12 +2,12 @@
   "categories": {
     "sport": 0,
     "world": 0,
-    "business": -1,
+    "business": -2,
     "health": 0,
     "entertainment": 0,
     "sci_tech": 0
   },
   "sources": {
-    "https://www.rt.com/op-ed/548381-net-zero-energy-prices/": 1
+    "https://www.rt.com/rss/": -1
   }
 }

@@ -1,7 +1,6 @@
-import eel
+import heapq
 
 from user_profile import get_user_data
-import heapq
 
 
 def show_news(news):

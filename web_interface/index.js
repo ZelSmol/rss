@@ -4,8 +4,8 @@ async function get_news() {
 
 }
 
-async function update_user_profile(category, guid) {
-    eel.update_user_profile(category, guid)();
+async function update_user_profile(category, url) {
+    eel.update_user_profile(category, url)();
 }
 
 async function get_news_set() {

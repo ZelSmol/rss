@@ -4,6 +4,7 @@ from user_profile import get_user_data
 
 
 def show_news(news):
+    '''Сортирует новости в порядке актуальности для пользователя'''
     q = []
     data = get_user_data()
     for item in news:

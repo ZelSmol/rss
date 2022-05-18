@@ -14,6 +14,7 @@ def create_new_profile():
 
 @eel.expose
 def update_user_profile(category, source):
+    '''Обновляет пользовательский профиль после перехода на интересную новость'''
     with open("./data/user_profile.json", 'r', encoding='utf-8') as profile:
         data = json.load(profile)
 
@@ -28,5 +29,6 @@ def update_user_profile(category, source):
 
 
 def get_user_data():
+    '''Возвращает информацию о профиле'''
     with open("./data/user_profile.json", 'r', encoding='utf-8') as profile:
         return json.load(profile)

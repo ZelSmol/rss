@@ -11,6 +11,7 @@ class News:
         self.url = url
 
     def get_html(self):
+        '''Преобразует объект новости в html код'''
         news_widget = open("web_interface/news_widget", "r").read()
         news_colors = {"sport": "warning", "world": "info", "business": "danger",
                        "health": "success", "entertainment": "secondary", "sci_tech": "primary"}

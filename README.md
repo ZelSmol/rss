@@ -3,7 +3,7 @@
 ## Использование
 __Запустить файл main.py (bold)__
 В запустившемся окне, можно пользоваться реализованным функционалом.
-![Alt-текст]([https://vk.com/im?sel=169941761&z=photo169941761_457248733%2Fmail493856](https://sun9-11.userapi.com/s/v1/if2/FGhPHCqzfpoSqvEQveTAZZUbB64Pfcsk6yMD0PeBIrX4ndYKZP8qzNkpb-B1ZLd8Y8bz93iseEeOre-ETJP3_dE3.jpg?size=1472x890&quality=96&type=album) "main window")
+![Alt-текст](https://vk.com/im?sel=169941761&z=photo169941761_457248733%2Fmail493856](https://sun9-11.userapi.com/s/v1/if2/FGhPHCqzfpoSqvEQveTAZZUbB64Pfcsk6yMD0PeBIrX4ndYKZP8qzNkpb-B1ZLd8Y8bz93iseEeOre-ETJP3_dE3.jpg?size=1472x890&quality=96&type=album) "main window")
 Чтобы получить список новостей из имеющегося RSS-источника, необходимо вставить ссылку в input и нажать на кнопку `Get news` 
 
 ## Функционал

@@ -1,4 +1,5 @@
 import json
+
 import eel
 
 
@@ -15,9 +16,11 @@ def create_new_profile():
 @eel.expose
 def update_user_profile(category, source):
     '''Обновляет пользовательский профиль после перехода на интересную новость'''
-    with open("./data/user_profile.json", 'r', encoding='utf-8') as profile:
-        data = json.load(profile)
-
+    try:
+        with open("./data/user_profile.json", 'r', encoding='utf-8') as profile:
+            data = json.load(profile)
+    except: #а вдруг профиль потёрли
+        create_new_profile()
     data["categories"][category] -= 1
     if source in data["sources"]:
         data["sources"][source] -= 1

@@ -7,6 +7,12 @@ from show_news import show_news
 @eel.expose
 def news_by_url(url):
     '''Возвращает новостную ленту источника'''
+    with open("./data/news_sources", 'r', encoding='utf-8') as sources:
+        news_sources=sources.readlines()
+    if url not in news_sources:
+        with open("./data/news_sources", 'a', encoding='utf-8') as sources:
+            sources.write("\n")
+            sources.write(url)
     return show_news(get_feed([url]))
 
 
